@@ -1,0 +1,410 @@
+main page code is:
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexi Task</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+      /* Tailwind doesn't include this utility class by default, so we need to define it */
+      .hidden {
+        display: none;
+      }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Fixed Navbar -->
+  <div class="fixed top-0 left-0 w-full text-black  z-50 bg-gray-100 ">
+    <div class="flex items-center justify-between px-6 py-4 mx-auto max-w-7xl">
+      <!-- Logo -->
+      <div class="flex items-center space-x-4">
+        <img src="/images/logo.png" alt="Logo" class="w-16 h-16"> <!-- Increased size -->
+      </div>
+
+      <!-- Desktop Navigation Links and Search Bar -->
+      <div class="hidden md:flex items-center space-x-4" >
+        <div class="flex space-x-4" style="justify-items:first baseline;" >
+         <b class="" >
+          <a href="#" class="text-black px-4 py-2 rounded hover:text-blue-500 ">Home</a>
+          <a href="#" class="text-black px-4 py-2 rounded hover:text-blue-500 ">About</a>
+          <a href="#" class="text-black px-4 py-2 rounded hover:text-blue-500 ">Services</a>
+          <a href="#" class="text-black px-4 py-2 rounded hover:text-blue-500 ">Contact</a>
+         </b>
+        </div>
+        <div class="relative flex items-center">
+          <input type="text" placeholder="Search" class="bg-white text-gray-900 px-16 py-2 rounded-md shadow-sm border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400">
+          <button class="absolute inset-y-0 right-0 px-4 py-2 text-white bg-blue-600 rounded-r-md hover:bg-blue-700">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z"></path></svg>
+          </button>
+        </div>
+        <a href="#" class="text-black px-4 py-2 rounded-lg hover:bg-gray-300"><b>Log in</b></a>
+
+        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"><b>SignUp</b></a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden flex items-center">
+        <button id="menu-button" class="text-gray-900 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed top-16 left-0 w-full bg-white shadow-md z-40 md:hidden hidden">
+    <div class="flex flex-col px-6 py-4 mx-auto max-w-7xl">
+      <a href="#" class="text-black px-4 py-2 rounded hover:text-blue-500 ">Home</a>
+      <a href="#" class="text-black px-4 py-2 rounded hover:text-blue-500 ">About</a>
+      <a href="#" class="text-black px-4 py-2 rounded hover:text-blue-500 ">Services</a>
+      <a href="#" class="text-black px-4 py-2 rounded hover:text-blue-500 ">Contact</a>
+      <div class="relative mt-4">
+        <input type="text" placeholder="Search" class="bg-white text-gray-900 px-16 py-2 rounded-md shadow-sm border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <button class="absolute inset-y-0 right-0 px-4 py-2 text-white bg-blue-600 rounded-r-md hover:bg-blue-700">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z"></path></svg>
+        </button>
+      </div>
+      <a href="#" class="text-black px-4 py-2 rounded-lg hover:bg-gray-300"><b>Log in</b></a>
+
+        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"><b>SignUp</b></a>
+      
+    </div>
+  </div>
+
+    <!-- Hero Section -->
+    <section class="flex flex-col-reverse items-center justify-between px-6 py-16 mx-auto md:flex-row max-w-7xl">
+        <!-- Left Content -->
+        <div class="max-w-xl space-y-6 ">
+            <h1 class="text-5xl font-bold text-gray-900  md:text-left text-center">
+                Empowering Freelancers, <br> Enabling Success
+            </h1>
+            <p class="text-lg text-gray-600  md:text-left text-center">
+                Flexi Task connects talent with opportunity, making every task a step towards your next achievement.
+            </p>
+            <p><a href="#" class=" px-6 py-2 mt-16 text-black   border border-gray-400 rounded-md hover:text-blue-500 ">
+              <b>Explore</b>
+          </a></p>
+          
+        </div>
+
+        <!-- Right Image -->
+        <div class="flex justify-center w-full mt-10 md:mt-0 md:w-1/2">
+            <img src="/images/developer.png" alt="Freelancer Working" class="w-full h-auto md:w-12/12">
+        </div>
+    </section>
+
+    <!-- Category Section -->
+<!-- Category Section with single-row, smaller items -->
+<section class="py-12 bg-gray-100">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-semibold text-center text-gray-800 mb-8">Explore Categories</h2>
+      
+      <div class="categories-container flex flex-wrap justify-center gap-4 overflow-hidden">
+        <!-- Category 1 -->
+        <div class="category-item bg-white w-40 p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+          <div class="mb-4">
+            <img src="/images/app-development.png" alt="Web Development Icon" class="h-12 w-12">
+          </div>
+          <h3 class="text-sm font-semibold text-gray-800 text-center">Web Development</h3>
+        </div>
+  
+        <!-- Category 2 -->
+        <div class="category-item bg-white w-40 p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+          <div class="mb-4">
+            <img src="https://img.icons8.com/clouds/100/000000/seo.png" alt="SEO Icon" class="h-12 w-12">
+          </div>
+          <h3 class="text-sm font-semibold text-gray-800 text-center">SEO</h3>
+        </div>
+  
+        <!-- Category 3 -->
+        <div class="category-item bg-white w-40 p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+          <div class="mb-4">
+            <img src="https://img.icons8.com/clouds/100/000000/content.png" alt="Content Writing Icon" class="h-12 w-12">
+          </div>
+          <h3 class="text-sm font-semibold text-gray-800 text-center">Content Writing</h3>
+        </div>
+  
+        <!-- Category 4 -->
+        <div class="category-item bg-white w-40 p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+          <div class="mb-4">
+            <img src="https://img.icons8.com/clouds/100/000000/graphic-design.png" alt="Graphic Design Icon" class="h-12 w-12">
+          </div>
+          <h3 class="text-sm font-semibold text-gray-800 text-center">Graphic Design</h3>
+        </div>
+  
+        <!-- Category 5 -->
+        <div class="category-item bg-white w-40 p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+          <div class="mb-4">
+            <img src="https://img.icons8.com/clouds/100/000000/marketing.png" alt="Digital Marketing Icon" class="h-12 w-12">
+          </div>
+          <h3 class="text-sm font-semibold text-gray-800 text-center">Digital Marketing</h3>
+        </div>
+  
+        <!-- Category 6 -->
+        <div class="category-item bg-white w-40 p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+          <div class="mb-4">
+            <img src="https://img.icons8.com/clouds/100/000000/data-science.png" alt="Data Science Icon" class="h-12 w-12">
+          </div>
+          <h3 class="text-sm font-semibold text-gray-800 text-center">Data Science</h3>
+        </div>
+  
+        <!-- Category 7 -->
+        <div class="category-item bg-white w-40 p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+          <div class="mb-4">
+            <img src="https://img.icons8.com/clouds/100/000000/accounting.png" alt="Accounting Icon" class="h-12 w-12">
+          </div>
+          <h3 class="text-sm font-semibold text-gray-800 text-center">Accounting</h3>
+        </div>
+  
+        <!-- Category 8 -->
+        <div class="category-item bg-white w-40 p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+          <div class="mb-4">
+            <img src="https://img.icons8.com/clouds/100/000000/translation.png" alt="Translation Icon" class="h-12 w-12">
+          </div>
+          <h3 class="text-sm font-semibold text-gray-800 text-center">Translation</h3>
+        </div>
+      </div>
+  
+      <!-- View More Button -->
+      <div class="flex justify-center ">
+        <button id="viewMoreBtn" class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-300">View More</button>
+      </div>
+    </div>
+  </section>
+  
+
+
+
+    <h2 class="text-3xl font-semibold text-center text-gray-800 mb-8">Testimonials</h2>
+    <div class="testimonial-section">
+      <div class="testimonial-container">
+        <!-- Testimonial Image -->
+        <div class="testimonial-image">
+          <img src="https://via.placeholder.com/150" alt="Testimonial Author">
+        </div>
+  
+        <!-- Testimonial Content -->
+        <div class="testimonial-content">
+          <div class="testimonial-text">"It's extremely exciting that Fiverr has freelancers from all over the world — it broadens the talent pool. One of the best things about Fiverr is that while we're sleeping, someone's working."</div>
+          <div class="testimonial-author">Kay Kim, Co-Founder, Rooted</div>
+        </div>
+  
+        <!-- Slider Controls -->
+        
+      </div>
+      <div class="slider-controls">
+        <button class="prev"> </button>
+        <button class="next"> </button>
+      </div>
+    </div>
+  
+      <!-- Footer Section -->
+      <footer class="footer">
+        <div class="footer-column">
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="#">Graphics & Design</a></li>
+            <li><a href="#">Digital Marketing</a></li>
+            <li><a href="#">Writing & Translation</a></li>
+            <li><a href="#">Video & Animation</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>About</h3>
+          <ul>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press & News</a></li>
+            <li><a href="#">Partnerships</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">Help & Support</a></li>
+            <li><a href="#">Trust & Safety</a></li>
+            <li><a href="#">Buying on Fiverr</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Community</h3>
+          <ul>
+            <li><a href="#">Customer Stories</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Business Solutions</h3>
+          <ul>
+            <li><a href="#">Fiverr Pro</a></li>
+            <li><a href="#">Fiverr Enterprise</a></li>
+            <li><a href="#">Become an Agency</a></li>
+          </ul>
+        </div>
+      </footer>
+
+      <script src="./js/js.js"></script>
+
+    
+</body>
+
+</html>
+
+
+Client page code is:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Portal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f0f4f8;
+      font-family: 'Poppins', sans-serif;
+    }
+    .sidebar {
+      height: 100vh;
+      background-color: #1e272e;
+      color: white;
+      position: fixed;
+    }
+    .sidebar a {
+      color: #ced6e0;
+      padding: 15px;
+      text-decoration: none;
+      display: block;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .sidebar a:hover {
+      background-color: #57606f;
+      color: white;
+    }
+    .dashboard-header {
+      background: linear-gradient(135deg, #6a89cc, #4a69bd);
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    .dashboard-header h2 {
+      font-size: 2rem;
+    }
+    .card {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    .card img {
+      height: 150px;
+      object-fit: cover;
+    }
+    .card-body {
+      background-color: white;
+      padding: 20px;
+    }
+    .notification {
+      background-color: #f9fafb;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+    .notification p {
+      margin: 0;
+    }
+    .btn-primary {
+      background-color: #4a69bd;
+      border-color: #4a69bd;
+    }
+    .btn-primary:hover {
+      background-color: #6a89cc;
+      border-color: #6a89cc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <nav class="col-md-2 d-none d-md-block sidebar">
+        <div class="position-sticky">
+          <h3 class="text-center my-4">Client Portal</h3>
+          <a href="#">Dashboard</a>
+          <a href="#">Projects</a>
+          <a href="#">Messages</a>
+          <a href="#">Invoices</a>
+          <a href="#">Settings</a>
+        </div>
+      </nav>
+
+      <!-- Main content -->
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 offset-md-2">
+        <!-- Dashboard Header -->
+        <div class="dashboard-header">
+          <h2>Welcome, Kunal</h2>
+          <button class="btn btn-primary mt-3">New Project</button>
+        </div>
+
+        <!-- Project and Features Section -->
+        <div class="row my-4">
+          <!-- Project Card -->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="https://theremotehive.com/wp-content/uploads/2019/07/freelancers.jpg" alt="Project Image">
+              <div class="card-body">
+                <h5 class="card-title">Ongoing Projects</h5>
+                <p class="card-text">View and manage your active projects.</p>
+                <a href="#" class="btn btn-outline-primary">Go to Projects</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Messages Card -->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="data:image/jpeg;base64,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" alt="Messages Image">
+              <div class="card-body">
+                <h5 class="card-title">Messages</h5>
+                <p class="card-text">Check your latest communications with freelancers.</p>
+                <a href="#" class="btn btn-outline-primary">View Messages</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Invoices Card -->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="data:image/jpeg;base64,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" alt="Invoices Image">
+              <div class="card-body">
+                <h5 class="card-title">Invoices</h5>
+                <p class="card-text">Review your invoices and payment history.</p>
+                <a href="#" class="btn btn-outline-primary">View Invoices</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Notifications Section -->
+        <div class="row">
+          <div class="col-md-12">
+            <div class="notification">
+              <p><strong>Recent Notifications:</strong> New project update from Freelancer A | Payment processed for Project B</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

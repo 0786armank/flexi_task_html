@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoices - Client Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="flex flex-col h-screen">
+        <!-- Navbar -->
+        <nav id="top-nav" class="bg-gray-100 shadow-md p-4 md:flex items-center justify-between hidden">
+            <div class="flex items-center">
+                <img src="/images/logo.png" alt="Logo" class="w-16 h-16 mr-4">
+                <h1 class="text-2xl font-bold">Client Portal</h1>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-gray-700 hover:text-blue-500">Home</a>
+                <a href="#" class="text-gray-700 hover:text-blue-500">About</a>
+                <a href="#" class="text-gray-700 hover:text-blue-500">Services</a>
+                <a href="#" class="text-gray-700 hover:text-blue-500">Contact</a>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Log Out</button>
+            </div>
+        </nav>
+
+        <div class="flex flex-1 overflow-hidden">
+            <!-- Sidebar -->
+            <nav id="sidebar" class="bg-gray-100 w-64 flex-shrink-0 hidden md:block overflow-y-auto">
+                <div class="p-4">
+                    <h3 class="text-2xl font-bold mb-8 text-gray-800">Client Portal</h3>
+                    <ul>
+                        <li class="mb-4"><a href="new.html" class="text-gray-700 hover:text-blue-500">Dashboard</a></li>
+                        <li class="mb-4"><a href="clientproject.html" class="text-gray-700 hover:text-blue-500">Projects</a></li>
+                        <li class="mb-4"><a href="messages.html" class="text-gray-700 hover:text-blue-500">Messages</a></li>
+                        <li class="mb-4"><a href="invoice.html" class="text-blue-500 font-semibold">Invoices</a></li>
+                        <li class="mb-4"><a href="settings.html" class="text-gray-700 hover:text-blue-500">Settings</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="flex-1 overflow-y-auto p-8">
+                <!-- Menu toggle button -->
+                <button id="menu-toggle" class="md:hidden rounded-lg shadow-md fixed top-4 left-4 z-50 bg-white-100 text-black-500 p-2 rounded-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+
+                <div class="bg-gradient-to-r from-blue-500 to-blue-700 text-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-3xl font-bold mb-4">Invoices</h2>
+                    <button class="bg-white text-blue-700 px-6 py-2 rounded-lg hover:bg-gray-100 transition-colors duration-300">Create New Invoice</button>
+                </div>
+
+                <!-- Invoice Summary -->
+                <div class="grid md:grid-cols-3 gap-8 mb-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">Total Outstanding</h3>
+                        <p class="text-3xl font-bold text-blue-600">$12,500.00</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">Paid This Month</h3>
+                        <p class="text-3xl font-bold text-green-600">$8,750.00</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">Overdue</h3>
+                        <p class="text-3xl font-bold text-red-600">$2,000.00</p>
+                    </div>
+                </div>
+
+                <!-- Invoice List -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6 border-b">
+                        <h3 class="text-xl font-semibold">Recent Invoices</h3>
+                    </div>
+                    <table class="w-full">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="text-left p-4">Invoice #</th>
+                                <th class="text-left p-4">Project</th>
+                                <th class="text-left p-4">Amount</th>
+                                <th class="text-left p-4">Due Date</th>
+                                <th class="text-left p-4">Status</th>
+                                <th class="text-left p-4">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b">
+                                <td class="p-4">INV-001</td>
+                                <td class="p-4">Website Redesign</td>
+                                <td class="p-4">$5,000.00</td>
+                                <td class="p-4">2023-05-15</td>
+                                <td class="p-4"><span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm">Paid</span></td>
+                                <td class="p-4"><a href="#" class="text-blue-600 hover:underline">View</a></td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="p-4">INV-002</td>
+                                <td class="p-4">Mobile App Development</td>
+                                <td class="p-4">$8,500.00</td>
+                                <td class="p-4">2023-05-30</td>
+                                <td class="p-4"><span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-sm">Pending</span></td>
+                                <td class="p-4"><a href="#" class="text-blue-600 hover:underline">View</a></td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="p-4">INV-003</td>
+                                <td class="p-4">E-commerce Platform</td>
+                                <td class="p-4">$12,000.00</td>
+                                <td class="p-4">2023-06-15</td>
+                                <td class="p-4"><span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-sm">Overdue</span></td>
+                                <td class="p-4"><a href="#" class="text-blue-600 hover:underline">View</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Payment History -->
+                <div class="mt-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-4">Payment History</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full">
+                                <thead>
+                                    <tr class="bg-gray-100">
+                                        <th class="text-left p-4">Date</th>
+                                        <th class="text-left p-4">Invoice #</th>
+                                        <th class="text-left p-4">Amount</th>
+                                        <th class="text-left p-4">Method</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="p-4">2023-05-10</td>
+                                        <td class="p-4">INV-001</td>
+                                        <td class="p-4">$5,000.00</td>
+                                        <td class="p-4">Credit Card</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-4">2023-04-25</td>
+                                        <td class="p-4">INV-000</td>
+                                        <td class="p-4">$3,750.00</td>
+                                        <td class="p-4">Bank Transfer</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+        const topNav = document.getElementById('top-nav');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
+            topNav.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

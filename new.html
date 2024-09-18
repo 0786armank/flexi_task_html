@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="flex flex-col h-screen">
+        <!-- Navbar -->
+        <nav id="top-nav" class="bg-gray-100 shadow-md p-4 md:flex items-center justify-between hidden">
+            <div class="flex items-center">
+                <img src="/images/logo.png" alt="Logo" class="w-16 h-16 mr-4">
+                <h1 class="text-2xl font-bold">Client Portal</h1>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-gray-700 hover:text-blue-500">Home</a>
+                <a href="#" class="text-gray-700 hover:text-blue-500">About</a>
+                <a href="#" class="text-gray-700 hover:text-blue-500">Services</a>
+                <a href="#" class="text-gray-700 hover:text-blue-500">Contact</a>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Log Out</button>
+            </div>
+        </nav>
+
+        <div class="flex flex-1 overflow-hidden">
+            <!-- Sidebar -->
+            <nav id="sidebar" class="bg-gray-100 w-64 flex-shrink-0 hidden md:block overflow-y-auto">
+                <div class="p-4">
+                    <h3 class="text-2xl font-bold mb-8 text-gray-800">Client Portal</h3>
+                    <ul>
+                        <li class="mb-4"><a href="new.html" class="text-gray-700 hover:text-blue-500">Dashboard</a></li>
+                        <li class="mb-4"><a href="clientproject.html" class="text-gray-700 hover:text-blue-500">Projects</a></li>
+                        <li class="mb-4"><a href="messages.html" class="text-gray-700 hover:text-blue-500">Messages</a></li>
+                        <li class="mb-4"><a href="invoice.html" class="text-gray-700 hover:text-blue-500">Invoices</a></li>
+                        <li class="mb-4"><a href="#" class="text-gray-700 hover:text-blue-500">Settings</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="flex-1 overflow-y-auto p-8">
+                <!-- Menu toggle button -->
+                <button id="menu-toggle" class="md:hidden rounded-lg shadow-md fixed top-4 left-4 z-50 bg-white-100 text-black-500 p-2 rounded-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+
+                <div class="bg-gradient-to-r from-blue-500 to-blue-700 text-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-3xl font-bold mb-4">Welcome, Kunal</h2>
+                    <button class="bg-white text-blue-700 px-6 py-2 rounded-lg hover:bg-gray-100 transition-colors duration-300">New Project</button>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Projects Card -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="images/Untitled design (4).png" alt="Project Image" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Ongoing Projects</h3>
+                            <p class="text-gray-600 mb-4">View and manage your active projects.</p>
+                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Go to Projects</a>
+                        </div>
+                    </div>
+
+                    <!-- Messages Card -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="/images/Untitled design (8).png" alt="Messages Image" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Messages</h3>
+                            <p class="text-gray-600 mb-4">Check your latest communications with freelancers.</p>
+                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View Messages</a>
+                        </div>
+                    </div>
+
+                    <!-- Invoices Card -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="images/developer.png" alt="Invoices Image" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Invoices</h3>
+                            <p class="text-gray-600 mb-4">Review your invoices and payment history.</p>
+                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View Invoices</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notifications Section -->
+                <div class="mt-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-4">Recent Notifications</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                New project update from Freelancer A
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                Payment processed for Project B
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+        const topNav = document.getElementById('top-nav');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
+            topNav.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

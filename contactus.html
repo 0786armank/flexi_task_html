@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            padding: 50px;
+        }
+
+        /* Left side (Image section) */
+        .contact-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .contact-image img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Right side (Form section) */
+        .contact-form {
+            flex: 1;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #333;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            height: 150px;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-image,
+            .contact-form {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .contact-form {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freelance Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+     <!-- Fixed Navbar -->
+  <div class="fixed top-0 left-0 w-full text-black  z-50 bg-gray-100 ">
+    <div class="flex items-center justify-between px-6 py-4 mx-auto max-w-7xl">
+      <!-- Logo -->
+      <div class="flex items-center space-x-4">
+        <img src="/images/logo.png" alt="Logo" class="w-16 h-16"> <!-- Increased size -->
+      </div>
+
+      <!-- Desktop Navigation Links and Search Bar -->
+      <div class="hidden md:flex items-center space-x-4" >
+        <div class="flex space-x-4" style="justify-items:first baseline;" >
+         <b class="" >
+          <a href="#" class="text-black px-4 py-2 rounded hover:text-blue-500 ">Home</a>
+          <a href="#" class="text-black px-4 py-2 rounded hover:text-blue-500 ">About</a>
+          <a href="#" class="text-black px-4 py-2 rounded hover:text-blue-500 ">Services</a>
+          <a href="#" class="text-black px-4 py-2 rounded hover:text-blue-500 ">Contact</a>
+         </b>
+        </div>
+        <div class="relative flex items-center">
+          <input type="text" placeholder="Search" class="bg-white text-gray-900 px-16 py-2 rounded-md shadow-sm border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400">
+          <button class="absolute inset-y-0 right-0 px-4 py-2 text-white bg-blue-600 rounded-r-md hover:bg-blue-700">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z"></path></svg>
+          </button>
+        </div>
+        <a href="#" class="text-black px-4 py-2 rounded-lg hover:bg-gray-300"><b>Log in</b></a>
+
+        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"><b>SignUp</b></a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden flex items-center">
+        <button id="menu-button" class="text-gray-900 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed top-16 left-0 w-full bg-white shadow-md z-40 md:hidden hidden">
+    <div class="flex flex-col px-6 py-4 mx-auto max-w-7xl">
+      <a href="#" class="text-black px-4 py-2 rounded hover:text-blue-500 ">Home</a>
+      <a href="#" class="text-black px-4 py-2 rounded hover:text-blue-500 ">About</a>
+      <a href="#" class="text-black px-4 py-2 rounded hover:text-blue-500 ">Services</a>
+      <a href="#" class="text-black px-4 py-2 rounded hover:text-blue-500 ">Contact</a>
+      <div class="relative mt-4">
+        <input type="text" placeholder="Search" class="bg-white text-gray-900 px-16 py-2 rounded-md shadow-sm border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400">
+        <button class="absolute inset-y-0 right-0 px-4 py-2 text-white bg-blue-600 rounded-r-md hover:bg-blue-700">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z"></path></svg>
+        </button>
+      </div>
+      <a href="#" class="text-black px-4 py-2 rounded-lg hover:bg-gray-300"><b>Log in</b></a>
+
+        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"><b>SignUp</b></a>
+      
+    </div>
+  </div>
+    <!-- contact us -->
+    <div class="contact-container">
+        <!-- Left Side Image Section -->
+        <div class="contact-image">
+            <img src="/images/Untitled design (5).png" alt="Contact Image">
+        </div>
+
+        <!-- Right Side Contact Form Section -->
+        <div class="contact-form">
+            <h2>Contact Us</h2>
+
+            <form action="your-backend-endpoint" method="POST">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your name">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required placeholder="How can we get better?"></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+
+
+   <!-- Footer Section -->
+  <footer class="bg-white p-10 mt-10">
+    <div class="container mx-auto">
+      
+
+      <!-- Footer Bottom -->
+      <div class="mt-8 flex flex-col md:flex-row justify-between items-center border-t border-gray-300 pt-4">
+        <div class="text-gray-600 text-sm">&copy; Designhill.com</div>
+        <div class="text-gray-600 text-sm mt-4 md:mt-0 space-x-4">
+          <a href="#" class="hover:underline">Privacy</a>
+          <a href="#" class="hover:underline">Terms</a>
+          <a href="#" class="hover:underline">Cookies</a>
+          <a href="#" class="hover:underline">Copyright</a>
+        </div>
+        <!-- Social Media Icons -->
+        <div class="flex space-x-4 mt-4 md:mt-0">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="w-6 h-6"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Pinterest" class="w-6 h-6"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="LinkedIn" class="w-6 h-6"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" class="w-6 h-6"></a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+<script>
+    const dropdownButton = document.querySelector('button-down');
+const dropdownMenu = document.querySelector('.absolute');
+
+dropdownButton.addEventListener('click', () => {
+  dropdownMenu.classList.toggle('hidden');
+});
+
+</script>
+</body>
+</html>

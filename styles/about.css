@@ -1,0 +1,171 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+  }
+  
+  /* Add margin-top to push the content below the fixed navbar */
+  .about-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+    margin-top: 100px; /* Adjust this value to the height of your navbar */
+    background-color: #fff;
+    border-bottom: 1px solid black;
+    margin: 4rem;
+
+  }
+  
+  .about-us-text {
+    max-width: 800px;
+    text-align: center; /* Center the text including the <h1> */
+  }
+  
+  .about-us-text h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 100%;
+    word-wrap: break-word;
+  }
+
+  
+  .about-us-text p {
+    font-size: 25px;
+    color: #555;
+  }
+  
+  .about-us img {
+    max-width: 500px;
+    height: auto;
+  }
+  .about-us img {
+    max-width: 500px;
+    width: 100%; /* Ensures the image resizes for smaller screens */
+    height: auto;
+  }
+  
+  /* Responsive Media Queries */
+  
+  /* For tablets and medium screens (768px and below) */
+  @media (max-width: 768px) {
+    .about-us {
+      padding: 30px;
+      flex-direction: column; /* Stack the text and image vertically */
+    }
+  
+    .about-us-text {
+      margin-right: 0;
+      margin-bottom: 20px; /* Add spacing between text and image */
+      max-width: 100%; /* Let it take the full width */
+    }
+  
+    .about-us h1 {
+      font-size: 32px; /* Decrease font size slightly for smaller screens */
+    }
+  
+    .about-us p {
+      font-size: 16px; /* Adjust paragraph size for smaller screens */
+    }
+  
+    .about-us img {
+      max-width: 100%; /* Image will take full width on smaller screens */
+    }
+  }
+  
+  /* For mobile phones and smaller screens (480px and below) */
+  @media (max-width: 480px) {
+    .about-us {
+      padding: 20px;
+    }
+  
+    .about-us h1 {
+      font-size: 28px; /* Further decrease the font size for mobile */
+    }
+  
+    .about-us p {
+      font-size: 14px; /* Reduce paragraph font size for better readability */
+    }
+  
+    .about-us img {
+      max-width: 100%;
+      height: auto; /* Image will take full width */
+    }
+  }
+
+  /* Quote 2nd page css */
+  .quote-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 0;
+    background-color: #fff;
+  }
+  
+  /* Quote Text Styling */
+  .quote-text {
+    flex: 1; /* Takes 50% width */
+   padding-left: 3rem;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .quote-text h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    line-height: 1.2;
+    text-align: left;
+    margin: 0;
+    max-width: 90%;
+  }
+  
+  /* Quote Image Styling */
+  .quote-image {
+    flex: 1; /* Takes 50% width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .quote-image img {
+    max-width: 500px;
+    height: auto;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .quote-text h2 {
+      font-size: 3rem; /* Slightly reduce font size */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .quote-section {
+      flex-direction: column; /* Stacks the image and quote on top of each other */
+    }
+  
+    .quote-text, .quote-image {
+      flex: none;
+      width: 100%; /* Both take up full width */
+    }
+  
+    .quote-text {
+      padding: 30px;
+    }
+  
+    .quote-text h2 {
+      font-size: 2.5rem; /* Reduce font size for mobile */
+      text-align: center; /* Center align text for smaller screens */
+    }
+  }

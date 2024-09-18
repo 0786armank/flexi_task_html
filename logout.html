@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logged Out - Client Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="min-h-screen flex items-center justify-center">
+        <div class="bg-white p-8 rounded-lg shadow-md max-w-md w-full">
+            <div class="text-center mb-8">
+                <img src="/images/logo.png" alt="Logo" class="w-24 h-24 mx-auto mb-4">
+                <h1 class="text-3xl font-bold text-gray-800 mb-2">You've Been Logged Out</h1>
+                <p class="text-gray-600">Thank you for using our Client Portal. You have been successfully logged out.</p>
+            </div>
+            
+            <div class="space-y-4">
+                <button onclick="location.href='index.html'" class="w-full bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                    Log In Again
+                </button>
+                <button onclick="location.href='#'" class="w-full bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition duration-300">
+                    Visit Main Website
+                </button>
+            </div>
+
+            <div class="mt-8 text-center text-sm text-gray-600">
+                <p>If you have any questions, please contact our support team.</p>
+                <a href="mailto:support@example.com" class="text-blue-600 hover:underline">support@example.com</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="absolute bottom-0 w-full text-center p-4 text-sm text-gray-600">
+        <p>&copy; 2023 Your Company Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>
